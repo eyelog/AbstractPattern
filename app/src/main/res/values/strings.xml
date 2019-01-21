@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AbstractPattern</string>
+
+    <string-array name="way_list">
+        <item>В меньшую сторону</item>
+        <item>Средне</item>
+        <item>В большую сторону</item>
+    </string-array>
+</resources>
