@@ -1,5 +1,5 @@
 package ru.eyelog.abstractpattern.interfaced;
 
 public interface RCRoundFlexImpl {
-    int roundDexFlex(int val);
+    int roundDexFlex(String val);
 }

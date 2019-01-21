@@ -1,36 +1,32 @@
 package ru.eyelog.abstractpattern.classic;
 
-public class RoundClass {
+class RoundClass {
 
     private final static int FLEX_VALUE = 5;
 
-    public RoundClass() {
+    RoundClass() {
     }
 
-    public int roundDexUp(int val){
-        String stTemp = String.valueOf(val);
-        int out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10 + 10;
-        return out;
+    // Тут простая логика.
+    int roundDexUp(String val){
+        return Integer.parseInt(val.substring(0, val.length()-1)) * 10 + 10;
     }
 
-    public int roundDexDown(int val){
-        String stTemp = String.valueOf(val);
-        int out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10;
-        return out;
+    int roundDexDown(String val){
+        return Integer.parseInt(val.substring(0, val.length()-1)) * 10;
     }
 
-    public int roundDexFlex(int val){
-        String stTemp = String.valueOf(val);
-        int tempTail = Integer.parseInt(stTemp.substring(stTemp.length()-1));
+    int roundDexFlex(String val){
+        int tempTail = Integer.parseInt(val.substring(val.length()-1));
         int out;
 
         if(tempTail>0&&tempTail<FLEX_VALUE){
-            out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10;
+            out = Integer.parseInt(val.substring(0, val.length()-1)) * 10;
         }else if(tempTail>=FLEX_VALUE&&tempTail<=9){
-            out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10 + 10;
+            out = Integer.parseInt(val.substring(0, val.length()-1)) * 10 + 10;
         }else {
             // if 0
-            out = val;
+            out = Integer.parseInt(val);
         }
 
         return out;

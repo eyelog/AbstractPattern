@@ -18,7 +18,7 @@ public class ActivityInterface extends AppCompatActivity {
     EditText editText;
     Button button;
 
-    // Tiny air interfaces
+    // Лёгкие и стройные интерфейсы.
     RCRoundUpImpl ccRoundUp;
     RCRoundFlexImpl ccRoundFlex;
     RCRoundDownImpl ccRoundDown;
@@ -49,34 +49,23 @@ public class ActivityInterface extends AppCompatActivity {
             }
         });
 
+        // Для каждого действия вызываем соответствующий интерфейс и пользуемся на здоровье.
         button.setOnClickListener(v -> {
             if(!editText.getText().toString().equals("")){
                 switch (position){
                     case 0:
                         ccRoundDown = new RoundClass();
-                        outLine = String.valueOf(
-                                ccRoundDown.roundDexDown(
-                                        Integer.parseInt(editText.getText().toString())
-                                )
-                        );
+                        outLine = String.valueOf(ccRoundDown.roundDexDown(editText.getText().toString()));
 
                         break;
                     case 1:
                         ccRoundFlex = new RoundClass();
-                        outLine = String.valueOf(
-                                ccRoundFlex.roundDexFlex(
-                                        Integer.parseInt(editText.getText().toString())
-                                )
-                        );
+                        outLine = String.valueOf(ccRoundFlex.roundDexFlex(editText.getText().toString()));
 
                         break;
                     case 2:
                         ccRoundUp = new RoundClass();
-                        outLine = String.valueOf(
-                                ccRoundUp.roundDexUp(
-                                        Integer.parseInt(editText.getText().toString())
-                                )
-                        );
+                        outLine = String.valueOf(ccRoundUp.roundDexUp(editText.getText().toString()));
 
                         break;
                     default:

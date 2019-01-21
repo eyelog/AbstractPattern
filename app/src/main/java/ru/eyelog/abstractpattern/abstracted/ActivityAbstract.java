@@ -18,7 +18,7 @@ public class ActivityAbstract extends AppCompatActivity {
     EditText editText;
     Button button;
 
-    // More fit classes
+    // Более легкие и стройные классы
     RoundDown roundDown;
     RoundFlex roundFlex;
     RoundUp roundUp;
@@ -54,19 +54,19 @@ public class ActivityAbstract extends AppCompatActivity {
                 switch (position){
                     case 0:
                         roundDown = new RoundDown();
-                        roundDown.setValues(Integer.parseInt(editText.getText().toString()));
+                        roundDown.setValues(editText.getText().toString());
                         outLine = roundDown.roundIt();
 
                         break;
                     case 1:
                         roundFlex = new RoundFlex();
-                        roundFlex.setValues(Integer.parseInt(editText.getText().toString()));
+                        roundFlex.setValues(editText.getText().toString());
                         outLine = roundFlex.roundIt();
 
                         break;
                     case 2:
                         roundUp = new RoundUp();
-                        roundUp.setValues(Integer.parseInt(editText.getText().toString()));
+                        roundUp.setValues(editText.getText().toString());
                         outLine = roundUp.roundIt();
 
                         break;

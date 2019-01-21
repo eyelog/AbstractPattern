@@ -7,12 +7,12 @@ public class RoundFlex extends AbstractRound {
         int out;
 
         if(tempTail>0&&tempTail<FLEX_VALUE){
-            out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10;
+            out = Integer.parseInt(val.substring(0, val.length()-1)) * 10;
         }else if(tempTail>=FLEX_VALUE&&tempTail<=9){
-            out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10 + 10;
+            out = Integer.parseInt(val.substring(0, val.length()-1)) * 10 + 10;
         }else {
             // if 0
-            out = val;
+            out = Integer.parseInt(val);
         }
 
         return String.valueOf(out);

@@ -18,7 +18,7 @@ public class ActivityClassic extends AppCompatActivity {
     EditText editText;
     Button button;
 
-    // Big fat class
+    // Толстый, жирный, старый/добрый класс.
     RoundClass roundClass;
 
     private int position;
@@ -53,28 +53,19 @@ public class ActivityClassic extends AppCompatActivity {
                     case 0:
                         roundClass = new RoundClass();
                         outLine = String.valueOf(
-                                roundClass.roundDexDown(
-                                        Integer.parseInt(editText.getText().toString())
-                                )
-                        );
+                                roundClass.roundDexDown(editText.getText().toString()));
 
                         break;
                     case 1:
                         roundClass = new RoundClass();
                         outLine = String.valueOf(
-                                roundClass.roundDexFlex(
-                                        Integer.parseInt(editText.getText().toString())
-                                )
-                        );
+                                roundClass.roundDexFlex(editText.getText().toString()));
 
                         break;
                     case 2:
                         roundClass = new RoundClass();
                         outLine = String.valueOf(
-                                roundClass.roundDexUp(
-                                        Integer.parseInt(editText.getText().toString())
-                                )
-                        );
+                                roundClass.roundDexUp(editText.getText().toString()));
 
                         break;
                     default:

@@ -4,33 +4,29 @@ public class RoundClass implements RCRoundDownImpl, RCRoundFlexImpl, RCRoundUpIm
 
     private final static int FLEX_VALUE = 5;
 
-    public RoundClass() {
+    RoundClass() {
     }
 
-    public int roundDexUp(int val){
-        String stTemp = String.valueOf(val);
-        int out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10 + 10;
-        return out;
+    // Таже логика что и в классическом, только нужные методы перепрописаны в интерфейсы.
+    public int roundDexUp(String val){
+        return Integer.parseInt(val.substring(0, val.length()-1)) * 10 + 10;
     }
 
-    public int roundDexDown(int val){
-        String stTemp = String.valueOf(val);
-        int out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10;
-        return out;
+    public int roundDexDown(String val){
+        return Integer.parseInt(val.substring(0, val.length()-1)) * 10;
     }
 
-    public int roundDexFlex(int val){
-        String stTemp = String.valueOf(val);
-        int tempTail = Integer.parseInt(stTemp.substring(stTemp.length()-1));
+    public int roundDexFlex(String val){
+        int tempTail = Integer.parseInt(val.substring(val.length()-1));
         int out;
 
         if(tempTail>0&&tempTail<FLEX_VALUE){
-            out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10;
+            out = Integer.parseInt(val.substring(0, val.length()-1)) * 10;
         }else if(tempTail>=FLEX_VALUE&&tempTail<=9){
-            out = Integer.parseInt(stTemp.substring(0, stTemp.length()-1)) * 10 + 10;
+            out = Integer.parseInt(val.substring(0, val.length()-1)) * 10 + 10;
         }else {
             // if 0
-            out = val;
+            out = Integer.parseInt(val);
         }
 
         return out;
