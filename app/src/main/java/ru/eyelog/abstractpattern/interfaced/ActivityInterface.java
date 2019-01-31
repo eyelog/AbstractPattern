@@ -51,7 +51,8 @@ public class ActivityInterface extends AppCompatActivity {
 
         // Для каждого действия вызываем соответствующий интерфейс и пользуемся на здоровье.
         button.setOnClickListener(v -> {
-            if(!editText.getText().toString().equals("")){
+            if(!editText.getText().toString().equals("")
+                    &&Integer.parseInt(editText.getText().toString())>9){
                 switch (position){
                     case 0:
                         ccRoundDown = new RoundClass();
@@ -74,7 +75,7 @@ public class ActivityInterface extends AppCompatActivity {
                 }
                 textView.setText(outLine);
             }else {
-                editText.setError("Пусто!");
+                editText.setError("Пусто! Либо мало.");
             }
         });
     }

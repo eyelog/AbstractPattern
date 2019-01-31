@@ -48,7 +48,8 @@ public class ActivityClassic extends AppCompatActivity {
         });
 
         button.setOnClickListener(v -> {
-            if(!editText.getText().toString().equals("")){
+            if(!editText.getText().toString().equals("")
+                    &&Integer.parseInt(editText.getText().toString())>9){
                 switch (position){
                     case 0:
                         roundClass = new RoundClass();
@@ -74,7 +75,7 @@ public class ActivityClassic extends AppCompatActivity {
                 }
                 textView.setText(outLine);
             }else {
-                editText.setError("Пусто!");
+                editText.setError("Пусто! Либо мало.");
             }
         });
     }
